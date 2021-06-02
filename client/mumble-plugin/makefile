@@ -5,7 +5,7 @@ CC_WIN32=i686-w64-mingw32-g++-posix
 DEBUG=
 THREADS_UNIX=-pthread
 THREADS_WIN=-Wl,-Bstatic -lstdc++ -lpthread -lws2_32
-override CFLAGS+=-O3 -I. -I./lib $(DEBUG)
+override CFLAGS+=-std=c++11 -O3 -I. -I./lib $(DEBUG)
 override CFLAGS_WIN+=-static-libgcc -static-libstdc++ $(CFLAGS) -I./lib/openssl/include/
 SSLFLAGS+=-lssl -lcrypto -DSSLFLAGS
 SSLFLAGS_WIN+=-L./lib/openssl/ -static -lssl -lcrypto -DSSLFLAGS -lws2_32 -lcrypt32
