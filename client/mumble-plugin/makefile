@@ -138,7 +138,7 @@ release: clean-all test plugin #plugin-win64 plugin-win32
 	@echo GIT commit $(GITCOMMIT) from $(GITDATE), V$(VERSION)
 	head -n 1 ../../README.md > releaseReadme.md
 	@echo Version: $(VERSION) \($(GITCOMMIT) $(GITDATE)\) >> releaseReadme.md
-	tail +2 ../../README.md >> releaseReadme.md
+	tail -n 2 ../../README.md >> releaseReadme.md
 	
 	# Linux + Windows64 combined
 	mkdir fgcom-mumble-client-$(VERSION)
