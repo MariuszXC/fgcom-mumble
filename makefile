@@ -22,13 +22,13 @@ package:
 	cp client/radioGUI/target/FGCom-mumble-radioGUI-*-jar-with-dependencies.jar fgcom-mumble-$(PLUGINVER)/radioGUI/FGCom-mumble-radioGUI.jar
 	head -n 1 client/radioGUI/Readme.RadioGUI.md > fgcom-mumble-$(PLUGINVER)/radioGUI/Readme.RadioGUI.md
 	@echo Version: $(RADIOGUIVER) \($(GITVER) $(GITDATE)\) >> fgcom-mumble-$(PLUGINVER)/radioGUI/Readme.RadioGUI.md
-	tail +2 client/radioGUI/Readme.RadioGUI.md >> fgcom-mumble-$(PLUGINVER)/radioGUI/Readme.RadioGUI.md
+	tail -n 2 client/radioGUI/Readme.RadioGUI.md >> fgcom-mumble-$(PLUGINVER)/radioGUI/Readme.RadioGUI.md
 	
 	# combine FlightGear-Addon into release
 	cp -r client/fgfs-addon/ fgcom-mumble-$(PLUGINVER)
 	head -n 1 client/fgfs-addon/Readme.md > fgcom-mumble-$(PLUGINVER)/fgfs-addon/Readme.md
 	@echo Version: $(FGFSADDONVER) \($(GITVER) $(GITDATE)\) >> fgcom-mumble-$(PLUGINVER)/fgfs-addon/Readme.md
-	tail +2 client/fgfs-addon/Readme.md >> fgcom-mumble-$(PLUGINVER)/fgfs-addon/Readme.md
+	tail -n 2 client/fgfs-addon/Readme.md >> fgcom-mumble-$(PLUGINVER)/fgfs-addon/Readme.md
 	
 	# Adjust markdown links in readmes
 	sed -i 's?](../?](?'     fgcom-mumble-$(PLUGINVER)/plugin.spec.md
@@ -67,7 +67,7 @@ release-server:
 	cp server/recordings/readme.md server/recordings/fgcom.rec.testsample.fgcs fgcom-mumble-server-$(PLUGINVER)/recordings
 	head -n 1 server/Readme.server.md > fgcom-mumble-server-$(PLUGINVER)/README.md
 	@echo Version: $(PLUGINVER) \($(GITVER) $(GITDATE)\) >> fgcom-mumble-server-$(PLUGINVER)/README.md
-	tail +2 server/Readme.server.md >> fgcom-mumble-server-$(PLUGINVER)/README.md
+	tail -n 2 server/Readme.server.md >> fgcom-mumble-server-$(PLUGINVER)/README.md
 	cp -r server/statuspage/ fgcom-mumble-server-$(PLUGINVER)
 	mv fgcom-mumble-server-$(PLUGINVER)/statuspage/Readme.statuspage.md fgcom-mumble-server-$(PLUGINVER)
 	cp server/Readme.server-de_DE.md fgcom-mumble-server-$(PLUGINVER)/
@@ -82,7 +82,7 @@ release-radioGUI: radioGUI
 	cp client/radioGUI/target/FGCom-mumble-radioGUI-*-jar-with-dependencies.jar fgcom-mumble-radioGUI-$(RADIOGUIVER)/FGCom-mumble-radioGUI.jar
 	head -n 1 client/radioGUI/Readme.RadioGUI.md > fgcom-mumble-radioGUI-$(RADIOGUIVER)/Readme.RadioGUI.md
 	@echo Version: $(RADIOGUIVER) \($(GITVER) $(GITDATE)\) >> fgcom-mumble-radioGUI-$(RADIOGUIVER)/Readme.RadioGUI.md
-	tail +2 client/radioGUI/Readme.RadioGUI.md >> fgcom-mumble-radioGUI-$(RADIOGUIVER)/Readme.RadioGUI.md
+	tail -n 2 client/radioGUI/Readme.RadioGUI.md >> fgcom-mumble-radioGUI-$(RADIOGUIVER)/Readme.RadioGUI.md
 	zip -r fgcom-mumble-radioGUI-$(RADIOGUIVER).zip fgcom-mumble-radioGUI-$(RADIOGUIVER)
 	rm -rf fgcom-mumble-radioGUI-$(RADIOGUIVER)
 
@@ -106,7 +106,7 @@ release-fgcom-addon:
 	cp -r client/fgfs-addon/ fgcom-mumble-fgfs-addon-$(FGFSADDONVER)
 	head -n 1 client/fgfs-addon/Readme.md > fgcom-mumble-fgfs-addon-$(FGFSADDONVER)/Readme.md
 	@echo Version: $(FGFSADDONVER) \($(GITVER) $(GITDATE)\) >> fgcom-mumble-fgfs-addon-$(FGFSADDONVER)/Readme.md
-	tail +2 client/fgfs-addon/Readme.md >> fgcom-mumble-fgfs-addon-$(FGFSADDONVER)/Readme.md
+	tail -n 2 client/fgfs-addon/Readme.md >> fgcom-mumble-fgfs-addon-$(FGFSADDONVER)/Readme.md
 	zip -r fgcom-mumble-fgfs-addon-$(FGFSADDONVER).zip fgcom-mumble-fgfs-addon-$(FGFSADDONVER)
 	rm -rf fgcom-mumble-fgfs-addon-$(FGFSADDONVER)
 
